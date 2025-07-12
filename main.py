@@ -10,9 +10,12 @@ def save_and_encrypt_notes():
         messagebox.showinfo(title="Error!",message="Please enter all information.")
     else:
         #encryption
-
-        with open("mysecret.txt","a") as data_file:
-            data_file.write(f"\n{title}\n{message}")
+        try:
+            with open("mysecret.txt","a") as data_file:
+                data_file.write(f"\n{title}\n{message}")
+        except FileNotFoundError:
+            with open("mysecret.txt","w") as data_file:
+                data_file.write(f"\n{title}\n{message}")
 
 
 
