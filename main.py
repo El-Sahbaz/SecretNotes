@@ -88,7 +88,7 @@ master_secret_input.pack()
 save_button = Button(text="Save & Encrypt",command=save_and_encrypt_notes)
 save_button.pack()
 
-decrypt_button = Button(text="Decrypt")
+decrypt_button = Button(text="Decrypt",command=decrypt_notes)
 decrypt_button.pack()
 
 window.mainloop()
