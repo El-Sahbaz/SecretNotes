@@ -48,9 +48,12 @@ def decrypt_notes():
     if len(message_encrypted) == 0 or len(master_secret) == 0:
         messagebox.showinfo(title="Error!",message="Please enter all info")
     else:
-        decrypted_message = decode(master_secret,message_encrypted)
-        input_text.delete("1.0",END)
-        input_text.insert("1.0",decrypted_message)
+        try:
+            decrypted_message = decode(master_secret,message_encrypted)
+            input_text.delete("1.0",END)
+            input_text.insert("1.0",decrypted_message)
+        except:
+            messagebox.showinfo(title="Error!",message="Please enter encrypted text!")
 
 #UI
 
