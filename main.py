@@ -16,6 +16,10 @@ def save_and_encrypt_notes():
         except FileNotFoundError:
             with open("mysecret.txt","w") as data_file:
                 data_file.write(f"\n{title}\n{message}")
+        finally:
+            title_entry.delete(0,END)
+            master_secret_input.delete(0,END)
+            input_text.delete("1.0",END)
 
 
 
